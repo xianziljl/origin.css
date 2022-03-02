@@ -12,10 +12,12 @@ specifiers:
   rollup-plugin-serve: ^1.1.0
   tslib: ^2.3.1
   typescript: ^4.4.4
+  webpack-virtual-modules: ^0.4.3
 
 dependencies:
   glob: registry.npmmirror.com/glob/7.2.0
   lodash: registry.nlark.com/lodash/4.17.21
+  webpack-virtual-modules: registry.npmmirror.com/webpack-virtual-modules/0.4.3
 
 devDependencies:
   '@rollup/plugin-node-resolve': registry.npmmirror.com/@rollup/plugin-node-resolve/13.0.6_rollup@2.59.0
@@ -376,7 +378,7 @@ packages:
     dev: true
 
   registry.npmmirror.com/fsevents/2.3.2:
-    resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fsevents/download/fsevents-2.3.2.tgz}
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fsevents/-/fsevents-2.3.2.tgz}
     name: fsevents
     version: 2.3.2
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -498,6 +500,12 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
+
+  registry.npmmirror.com/webpack-virtual-modules/0.4.3:
+    resolution: {integrity: sha512-5NUqC2JquIL2pBAAo/VfBP6KuGkHIZQXW/lNKupLPfhViwh8wNsu0BObtl09yuKZszeEUfbXz8xhrHvSG16Nqw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/webpack-virtual-modules/-/webpack-virtual-modules-0.4.3.tgz}
+    name: webpack-virtual-modules
+    version: 0.4.3
+    dev: false
 
   registry.npmmirror.com/ws/7.5.5:
     resolution: {integrity: sha1-i0vEr1GM+r0Ec65PmRRCh7M+uIE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ws/download/ws-7.5.5.tgz}
