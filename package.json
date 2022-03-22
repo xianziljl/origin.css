@@ -1,7 +1,7 @@
 {
   "name": "origin.css",
   "version": "1.0.0",
-  "description": "",
+  "description": "一个类 tailwind.css 的 css class 合集，更小，类名规则更简短，支持响应式、黑色模式、任意数值",
   "main": "index.js",
   "scripts": {
     "build": "rollup -c",
