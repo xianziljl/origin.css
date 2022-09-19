@@ -20,4 +20,4 @@ const COLORS = {
     "black":    ['#1f1f1f',"#4a4a4a","#3c3c3c","#323232","#2d2d2d","#222222","#1f1f1f","#1c1c1e","#1b1b1b","#181818","#0f0f0f"]
 }
 
-export default COLORS
+export default COLORS;

@@ -1,6 +1,6 @@
-import { NumStyle } from '../../interfaces/styles'
-import { INT_REG_STR, VAL_REG_STR } from '../../shared/const'
-import { getNumStyles } from '../../shared/utils'
+import { NumStyle } from '../../interfaces/styles';
+import { INT_REG_STR, VAL_REG_STR } from '../../shared/const';
+import { getNumStyles } from '../../shared/utils';
 
 const MAP = new Map<RegExp, string>([
     [new RegExp(`^rows-${INT_REG_STR}`), 'grid-template-rows: repeat({n}, 1fr);'],
@@ -12,13 +12,13 @@ const MAP = new Map<RegExp, string>([
     [new RegExp(`^gap-${VAL_REG_STR}`), 'grad-gap: {n}{u};'],
     [new RegExp(`^rgap-${VAL_REG_STR}`), 'row-gap: {n}{u};'],
     [new RegExp(`^cgap-${VAL_REG_STR}`), 'column-gap: {n}{u};'],
-])
+]);
 
 export default function grid(classNames: Set<string>): NumStyle[] {
-    let res = []
+    let res = [];
     MAP.forEach((template, reg) => {
-        const style = getNumStyles(classNames, reg, template)
-        res = res.concat(style)
-    })
-    return res
+        const style = getNumStyles(classNames, reg, template);
+        res = res.concat(style);
+    });
+    return res;
 }

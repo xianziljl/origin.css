@@ -1,7 +1,7 @@
-import { Origincss } from '../origincss';
+import { Origincss } from '../Origincss';
 import { Plugin } from 'vite';
- 
-export function origincss() {
+
+export function origincssVitePlugin() {
     const virtualModuleId = 'virtual:origin.css';
     const encodedVirtualModuleId = '/@id/' + virtualModuleId;
     const origincss = new Origincss();
@@ -38,6 +38,6 @@ export function origincss() {
                 }]
             });
         }
-    }
+    };
     return plugin;
 }

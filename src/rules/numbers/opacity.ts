@@ -1,6 +1,6 @@
-import { NumStyle } from '../../interfaces/styles'
-import { INT_REG_STR, NREG, NUM_REG, VREG } from '../../shared/const'
-import { pipeClassNames } from '../../shared/utils'
+import { NumStyle } from '../../interfaces/styles';
+import { INT_REG_STR, NREG, NUM_REG, VREG } from '../../shared/const';
+import { pipeClassNames } from '../../shared/utils';
 
 const MAP = new Map<RegExp, string>([
     [new RegExp(`^o-${INT_REG_STR}$`), 'opacity: {v};'],
@@ -18,26 +18,26 @@ const MAP = new Map<RegExp, string>([
     [new RegExp(`^blo-${INT_REG_STR}$`), '--bl-o: {v};'],
     // ring
     [new RegExp(`^ringo-${INT_REG_STR}$`), '--ring-o: {v};'],
-])
+]);
 
 export default function opacity(classNames: Set<string>): NumStyle[] {
-    let res: NumStyle[] = []
+    let res: NumStyle[] = [];
     // console.log(MAP)
     MAP.forEach((template, reg) => {
-        const names = Array.from(pipeClassNames(classNames, reg))
+        const names = Array.from(pipeClassNames(classNames, reg));
         // console.log('names', names)
         const result: NumStyle[] = names.map(name => {
-            const num = (~~NUM_REG.exec(name)[0]) || 0
-            if (num > 100) return null
+            const num = (~~NUM_REG.exec(name)[0]) || 0;
+            if (num > 100) return null;
 
-            const val = num / 100
+            const val = num / 100;
             const style = template
                 .replace(NREG, num.toString())
-                .replace(VREG, val.toString())
-            return { name, num, val, style }
-        })
-        const arr = result.filter(Boolean).sort((a, b) => a.num - b.num)
-        res = res.concat(arr)
-    })
-    return res
+                .replace(VREG, val.toString());
+            return { name, num, val, style };
+        });
+        const arr = result.filter(Boolean).sort((a, b) => a.num - b.num);
+        res = res.concat(arr);
+    });
+    return res;
 }

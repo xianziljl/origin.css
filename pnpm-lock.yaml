@@ -7,30 +7,30 @@ specifiers:
   '@types/lodash': ^4.14.176
   glob: ^7.2.0
   lodash: ^4.17.21
-  rollup: ^2.59.0
+  rollup: ^2.75.6
   rollup-plugin-livereload: ^2.0.5
   rollup-plugin-serve: ^1.1.0
-  tslib: ^2.3.1
-  typescript: ^4.4.4
+  tslib: ^2.4.0
+  typescript: ^4.7.3
   vite: ^3.1.2
   webpack-virtual-modules: ^0.4.3
 
 dependencies:
   glob: registry.npmmirror.com/glob/7.2.0
   lodash: registry.nlark.com/lodash/4.17.21
-  webpack-virtual-modules: registry.npmmirror.com/webpack-virtual-modules/0.4.3
 
 devDependencies:
-  '@rollup/plugin-node-resolve': registry.npmmirror.com/@rollup/plugin-node-resolve/13.0.6_rollup@2.59.0
-  '@rollup/plugin-typescript': registry.npmmirror.com/@rollup/plugin-typescript/8.3.0_qdy2zqrt4tpzhksopckz4bdk7q
+  '@rollup/plugin-node-resolve': registry.npmmirror.com/@rollup/plugin-node-resolve/13.0.6_rollup@2.78.1
+  '@rollup/plugin-typescript': registry.npmmirror.com/@rollup/plugin-typescript/8.3.0_doxuvukzbd3ngebdwlbityrq5y
   '@types/glob': registry.npmmirror.com/@types/glob/7.2.0
   '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.176
-  rollup: registry.npmmirror.com/rollup/2.59.0
+  rollup: 2.78.1
   rollup-plugin-livereload: registry.npmmirror.com/rollup-plugin-livereload/2.0.5
   rollup-plugin-serve: registry.npmmirror.com/rollup-plugin-serve/1.1.0
-  tslib: registry.nlark.com/tslib/2.3.1
-  typescript: registry.npmmirror.com/typescript/4.4.4
+  tslib: 2.4.0
+  typescript: 4.8.3
   vite: 3.1.2
+  webpack-virtual-modules: registry.npmmirror.com/webpack-virtual-modules/0.4.3
 
 packages:
 
@@ -349,6 +349,16 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
+  /tslib/2.4.0:
+    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
+    dev: true
+
+  /typescript/4.8.3:
+    resolution: {integrity: sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
+
   /vite/3.1.2:
     resolution: {integrity: sha512-wTDKPkiVbeT+drTPdkuvjVIC/2vKKUc1w3qNOuwgpyvPCZF6fvdxB5v5WEcCsqaYea0zrwA4+XialJKCHM3oVQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -376,7 +386,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  registry.nlark.com/@rollup/pluginutils/3.1.0_rollup@2.59.0:
+  registry.nlark.com/@rollup/pluginutils/3.1.0_rollup@2.78.1:
     resolution: {integrity: sha1-cGtFJO5tyLEDs8mVUz5a1oDAK5s=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@rollup/pluginutils/download/@rollup/pluginutils-3.1.0.tgz}
     id: registry.nlark.com/@rollup/pluginutils/3.1.0
     name: '@rollup/pluginutils'
@@ -388,7 +398,7 @@ packages:
       '@types/estree': registry.nlark.com/@types/estree/0.0.39
       estree-walker: registry.nlark.com/estree-walker/1.0.1
       picomatch: registry.nlark.com/picomatch/2.3.0
-      rollup: registry.npmmirror.com/rollup/2.59.0
+      rollup: 2.78.1
     dev: true
 
   registry.nlark.com/@types/estree/0.0.39:
@@ -635,19 +645,13 @@ packages:
       is-number: registry.nlark.com/is-number/7.0.0
     dev: true
 
-  registry.nlark.com/tslib/2.3.1:
-    resolution: {integrity: sha1-6KM1rdXOrlGqJh0ypJAVjvBC7wE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/tslib/download/tslib-2.3.1.tgz}
-    name: tslib
-    version: 2.3.1
-    dev: true
-
   registry.nlark.com/wrappy/1.0.2:
     resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/wrappy/download/wrappy-1.0.2.tgz}
     name: wrappy
     version: 1.0.2
     dev: false
 
-  registry.npmmirror.com/@rollup/plugin-node-resolve/13.0.6_rollup@2.59.0:
+  registry.npmmirror.com/@rollup/plugin-node-resolve/13.0.6_rollup@2.78.1:
     resolution: {integrity: sha1-KWKQcLt2dWe+gVf1dc+o8rjp73c=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/plugin-node-resolve/download/@rollup/plugin-node-resolve-13.0.6.tgz}
     id: registry.npmmirror.com/@rollup/plugin-node-resolve/13.0.6
     name: '@rollup/plugin-node-resolve'
@@ -656,16 +660,16 @@ packages:
     peerDependencies:
       rollup: ^2.42.0
     dependencies:
-      '@rollup/pluginutils': registry.nlark.com/@rollup/pluginutils/3.1.0_rollup@2.59.0
+      '@rollup/pluginutils': registry.nlark.com/@rollup/pluginutils/3.1.0_rollup@2.78.1
       '@types/resolve': registry.nlark.com/@types/resolve/1.17.1
       builtin-modules: registry.nlark.com/builtin-modules/3.2.0
       deepmerge: registry.nlark.com/deepmerge/4.2.2
       is-module: registry.nlark.com/is-module/1.0.0
       resolve: registry.nlark.com/resolve/1.20.0
-      rollup: registry.npmmirror.com/rollup/2.59.0
+      rollup: 2.78.1
     dev: true
 
-  registry.npmmirror.com/@rollup/plugin-typescript/8.3.0_qdy2zqrt4tpzhksopckz4bdk7q:
+  registry.npmmirror.com/@rollup/plugin-typescript/8.3.0_doxuvukzbd3ngebdwlbityrq5y:
     resolution: {integrity: sha1-vBB3+liXuYD8J+N2xON3iCxj5os=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/plugin-typescript/download/@rollup/plugin-typescript-8.3.0.tgz}
     id: registry.npmmirror.com/@rollup/plugin-typescript/8.3.0
     name: '@rollup/plugin-typescript'
@@ -676,11 +680,11 @@ packages:
       tslib: '*'
       typescript: '>=3.7.0'
     dependencies:
-      '@rollup/pluginutils': registry.nlark.com/@rollup/pluginutils/3.1.0_rollup@2.59.0
+      '@rollup/pluginutils': registry.nlark.com/@rollup/pluginutils/3.1.0_rollup@2.78.1
       resolve: registry.nlark.com/resolve/1.20.0
-      rollup: registry.npmmirror.com/rollup/2.59.0
-      tslib: registry.nlark.com/tslib/2.3.1
-      typescript: registry.npmmirror.com/typescript/4.4.4
+      rollup: 2.78.1
+      tslib: 2.4.0
+      typescript: 4.8.3
     dev: true
 
   registry.npmmirror.com/@types/glob/7.2.0:
@@ -817,29 +821,11 @@ packages:
       opener: registry.nlark.com/opener/1.5.2
     dev: true
 
-  registry.npmmirror.com/rollup/2.59.0:
-    resolution: {integrity: sha1-EIxhsPoKN+vI0fFk8oFiIFbw21k=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rollup/download/rollup-2.59.0.tgz}
-    name: rollup
-    version: 2.59.0
-    engines: {node: '>=10.0.0'}
-    hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
-  registry.npmmirror.com/typescript/4.4.4:
-    resolution: {integrity: sha1-LNAaGh8WBwTTEB/VpY/w+fy4Aww=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/typescript/download/typescript-4.4.4.tgz}
-    name: typescript
-    version: 4.4.4
-    engines: {node: '>=4.2.0'}
-    hasBin: true
-    dev: true
-
   registry.npmmirror.com/webpack-virtual-modules/0.4.3:
     resolution: {integrity: sha512-5NUqC2JquIL2pBAAo/VfBP6KuGkHIZQXW/lNKupLPfhViwh8wNsu0BObtl09yuKZszeEUfbXz8xhrHvSG16Nqw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/webpack-virtual-modules/-/webpack-virtual-modules-0.4.3.tgz}
     name: webpack-virtual-modules
     version: 0.4.3
-    dev: false
+    dev: true
 
   registry.npmmirror.com/ws/7.5.5:
     resolution: {integrity: sha1-i0vEr1GM+r0Ec65PmRRCh7M+uIE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ws/download/ws-7.5.5.tgz}

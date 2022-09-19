@@ -1,10 +1,10 @@
-import { ColorStyle } from '../../interfaces/styles'
-import { INT_REG_STR } from '../../shared/const'
-import { pipeClassNames } from '../../shared/utils'
-import hexRgb from '../../shared/hexRgb'
+import { ColorStyle } from '../../interfaces/styles';
+import { INT_REG_STR } from '../../shared/const';
+import { pipeClassNames } from '../../shared/utils';
+import hexRgb from '../../shared/hexRgb';
 import COLORS from './list';
 
-const COLOR_REG = `[a-z]+(-${INT_REG_STR})?`
+const COLOR_REG = `[a-z]+(-${INT_REG_STR})?`;
 
 const MAP = new Map<RegExp, string>([
     // color
@@ -21,57 +21,57 @@ const MAP = new Map<RegExp, string>([
     [new RegExp(`^bl-${COLOR_REG}$`), '--bl-o: 1;border-left-color: rgba({r},{g},{b},var(--bl-o));border-left-width: 1px;'],
     // ring
     [new RegExp(`^ring-${COLOR_REG}$`), '--ring-o: 1;--ring-size: 3px;box-shadow: 0 0 0 var(--ring-size) rgba({r},{g},{b},var(--ring-o));'],
-])
+]);
 
-const valReg = new RegExp(`-${INT_REG_STR}$`)
-const colorNameReg = /-[a-z]+/
-const rReg = /\{r\}/g
-const gReg = /\{g\}/g
-const bReg = /\{b\}/g
+const valReg = new RegExp(`-${INT_REG_STR}$`);
+const colorNameReg = /-[a-z]+/;
+const rReg = /\{r\}/g;
+const gReg = /\{g\}/g;
+const bReg = /\{b\}/g;
 
 function getVal(className: string): number {
-    let val = className.match(valReg)?.[0]
+    let val = className.match(valReg)?.[0];
     if (val) {
-        val = val.replace('-', '')
-        return (~~val || 0)
+        val = val.replace('-', '');
+        return (~~val || 0);
     }
-    return 0
+    return 0;
 }
 
 function getColorName(className: string): string {
-    const matchLetter = className.match(colorNameReg)
-    if (matchLetter) return matchLetter[0].replace('-', '')
-    return ''
+    const matchLetter = className.match(colorNameReg);
+    if (matchLetter) return matchLetter[0].replace('-', '');
+    return '';
 }
 
 function setRGB(template: string, color: string): string {
-    const { red, green, blue } = hexRgb(color)
+    const { red, green, blue } = hexRgb(color);
     return template
         .replace(rReg, red.toString())
         .replace(gReg, green.toString())
-        .replace(bReg, blue.toString())
+        .replace(bReg, blue.toString());
 }
 
 export default function colors(classNames: Set<string>): ColorStyle[] {
-    let res = []
+    let res = [];
     MAP.forEach((template, reg) => {
-        const names = Array.from(pipeClassNames(classNames, reg))
+        const names = Array.from(pipeClassNames(classNames, reg));
         const styles = names.map(name => {
-            const num = getVal(name)
-            const colors: string[] = COLORS[getColorName(name)]
-            if (!colors) return null
+            const num = getVal(name);
+            const colors: string[] = COLORS[getColorName(name)];
+            if (!colors) return null;
 
-            const color = colors[num]
-            if (!color) return null
+            const color = colors[num];
+            if (!color) return null;
 
-            const style = setRGB(template, color)
+            const style = setRGB(template, color);
 
-            return { name, num, color, style }
-        })
-        const arr = styles.filter(Boolean).sort((a, b) => a.num - b.num)
-        res = res.concat(arr)
-    })
-    return res
+            return { name, num, color, style };
+        });
+        const arr = styles.filter(Boolean).sort((a, b) => a.num - b.num);
+        res = res.concat(arr);
+    });
+    return res;
 }
 
 

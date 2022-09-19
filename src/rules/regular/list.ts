@@ -103,6 +103,6 @@ const REGULAR_LISR: [string, string][] = [
     ['b', 'font-weight: bold;'],
     ['s', 'text-decoration: line-through;'],
     ['u', 'text-decoration: underline;'],
-]
+];
 
-export default REGULAR_LISR
+export default REGULAR_LISR;

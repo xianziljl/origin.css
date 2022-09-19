@@ -1,6 +1,6 @@
 export interface RegularStyle {
     name: string,
-    style: string
+    style: string;
 }
 
 export interface NumStyle extends RegularStyle {
@@ -11,31 +11,31 @@ export interface NumStyle extends RegularStyle {
 
 export interface ColorStyle extends RegularStyle {
     color: string,
-    num: number
+    num: number;
 }
 
 export interface StateStyle {
     pre: string,
     state: string,
-    styles: RegularStyle[]
+    styles: RegularStyle[];
 }
 
 export interface BreakPointStyle {
     pre: string,
     value: number,
     styles: RegularStyle[],
-    status: StateStyle[]
+    status: StateStyle[];
 }
 
 export interface ScopeStyle {
     pre: string,
     styles: RegularStyle[],
-    status: StateStyle[]
+    status: StateStyle[];
 }
 
 export interface StyleRaw {
     styles: RegularStyle[],
     status: StateStyle[],
     breakpoints: BreakPointStyle[],
-    scopes: ScopeStyle[]
+    scopes: ScopeStyle[];
 }

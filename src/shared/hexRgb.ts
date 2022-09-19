@@ -5,7 +5,7 @@ const nonHexChars = new RegExp(`[^#${hexCharacters}]`, 'gi');
 const validHexSize = new RegExp(`^${match3or4Hex}$|^${match6or8Hex}$`, 'i');
 
 interface Options {
-    readonly format?: 'object' | 'array' | 'css';
+	readonly format?: 'object' | 'array' | 'css';
 	readonly alpha?: number;
 }
 
@@ -37,5 +37,5 @@ export default function hexRgb(hex: string, options: Options = {}) {
 	const blue = number & 255;
 	const alpha = typeof options.alpha === 'number' ? options.alpha : alphaFromHex;
 
-	return {red, green, blue, alpha};
+	return { red, green, blue, alpha };
 }

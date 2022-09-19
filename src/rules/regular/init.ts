@@ -16,4 +16,4 @@ img, svg, canvas{vertical-align: middle;}
 table{border-collapse: collapse;border-spacing: 0;}
 th, td{text-align: left;}
 code, pre, tt{font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;}
-`
+`;
