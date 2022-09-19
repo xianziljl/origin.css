@@ -1,8 +1,8 @@
 import VirtualModulesPlugin from 'webpack-virtual-modules'
-import Origincss from '../Origincss'
+import { Origincss } from '../Origincss'
 import path from 'path'
 
-class OrigincssPlugin {
+export class OrigincssPlugin {
     times = 0
     virtualModules: VirtualModulesPlugin = null
     path: string
@@ -37,5 +37,3 @@ class OrigincssPlugin {
         })
     }
 }
-
-export default OrigincssPlugin

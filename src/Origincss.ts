@@ -10,7 +10,7 @@ import { init } from './rules/regular/init'
 
 const DEFAULT_PATTERN = '{{src,public}/**/*,*}.{html,vue,js,jsx,ts,tsx}'
 
-class Origincss {
+export class Origincss {
     pattern: string // 'src/**/*.{html,vue,js,jsx,ts,tsx}'
     regulars: [string, string][]
     colors: { [propName: string]: string[] }
@@ -131,8 +131,6 @@ class Origincss {
         return this.getResult();
     }
 }
-
-export default Origincss
 
 
 // const ori = new Origincss()

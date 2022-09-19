@@ -1,0 +1,43 @@
+import { Origincss } from '../origincss';
+import { Plugin } from 'vite';
+ 
+export default function origincss() {
+    const virtualModuleId = 'virtual:origin.css';
+    const encodedVirtualModuleId = '/@id/' + virtualModuleId;
+    const origincss = new Origincss();
+    const plugin: Plugin = {
+        name: "origincss-vite",
+        apply: 'serve',
+        enforce: 'pre',
+        resolveId(id: string) {
+            if (id === virtualModuleId) {
+                return encodedVirtualModuleId;
+            }
+        },
+        load(id) {
+            if (id === encodedVirtualModuleId) {
+                return origincss.updateAll();
+            }
+        },
+        configureServer(_server) {
+            _server.watcher.add(virtualModuleId);
+        },
+        handleHotUpdate({ server }) {
+            const m = server.moduleGraph.getModuleById(encodedVirtualModuleId);
+            if (m == null) {
+                return;
+            }
+            server.moduleGraph.invalidateModule(m);
+            server.ws.send({
+                type: 'update',
+                updates: [{
+                    type: 'js-update',
+                    timestamp: +Date.now() + 1,
+                    path: encodedVirtualModuleId,
+                    acceptedPath: encodedVirtualModuleId,
+                }]
+            });
+        }
+    }
+    return plugin;
+}
