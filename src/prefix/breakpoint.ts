@@ -1,4 +1,5 @@
 import { getPrefixStyle } from '.';
+import { BreakPointConfig } from '../interfaces/config';
 import { BreakPointStyle } from '../interfaces/styles';
 
 const DEFAULT_BREAKPOINTS = {
@@ -9,7 +10,7 @@ const DEFAULT_BREAKPOINTS = {
     xs: 576
 };
 
-export default function breakpoint(classNames: Set<string>, breakpointMap = DEFAULT_BREAKPOINTS): BreakPointStyle[] {
+export default function breakpoint(classNames: Set<string>, breakpointMap: BreakPointConfig = DEFAULT_BREAKPOINTS): BreakPointStyle[] {
     const keys = Object.keys(breakpointMap);
     const res = keys.map(k => {
         const value = breakpointMap[k];

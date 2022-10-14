@@ -1,28 +1,40 @@
-import { Config } from './interfaces/config';
+import { BreakPointConfig, Config } from './interfaces/config';
 import { BreakPointStyle, RegularStyle, ScopeStyle, StateStyle, StyleRaw } from './interfaces/styles';
 import { sync as globSync } from 'glob';
 import { readFileSync, writeFileSync } from 'fs';
 import { ENCODING, REG } from './shared/const';
 import { formatName } from './shared/utils';
 import { init } from './rules/regular/init';
+import COLORS from './rules/colors/list';
 import prefix from './prefix';
 import rules from './rules';
 
 const DEFAULT_PATTERN = '{{src,public}/**/*,*}.{html,vue,js,jsx,ts,tsx}';
 
 export class Origincss {
-    pattern: string; // 'src/**/*.{html,vue,js,jsx,ts,tsx}'
+    pattern = DEFAULT_PATTERN;
     regulars: [string, string][];
     colors: { [propName: string]: string[]; };
-    breakpoints: { [propName: string]: number; };
-    themes: string[];
+    breakpoints: BreakPointConfig;
+    scopes: string[];
 
     blackList: Set<string> = new Set();
     classNames: Set<string> = new Set();
 
     constructor(config?: Config) {
-        this.pattern = config?.pattern ?? DEFAULT_PATTERN;
-        // this.regulars = 
+        if (config) {
+            const { pattern, classes, colors } = config;
+            if (pattern) this.pattern = pattern;
+            if (classes) classes.forEach(item => this.classNames.add(item));
+            if (colors) {
+                for (let key in colors) {
+                    COLORS[key] = colors[key];
+                }
+            }
+            this.colors = COLORS;
+            this.breakpoints = config.breakpoints;
+            this.scopes = config.scopes;
+        }
     }
 
     private scanAll() {
@@ -46,9 +58,10 @@ export class Origincss {
         const { classNames, blackList } = this;
         const _classNames = new Set(classNames);
         const styles = rules(_classNames);
-        const prefixStyles = prefix(_classNames);
+        const prefixStyles = prefix(_classNames, this.breakpoints, this.scopes);
 
         for (let s of _classNames) {
+            // 经过所有 rules 都未命中，加入黑名单
             blackList.add(s);
             classNames.delete(s);
         }

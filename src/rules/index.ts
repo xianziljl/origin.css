@@ -17,7 +17,7 @@ import location from './numbers/location';
 import regular from './regular';
 
 
-const list = [
+const map = {
     regular,
     location,
     width,
@@ -34,13 +34,14 @@ const list = [
     zIndex,
     transform,
     filter
-];
+};
 
 export default function rules(classNames: Set<string>): RegularStyle[] {
     let res = [];
-    list.forEach(fn => {
+    for (let key in map) {
+        const fn = map[key];
         const styles = fn(classNames);
         res = res.concat(styles);
-    });
+    }
     return res;
 }

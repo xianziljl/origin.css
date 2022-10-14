@@ -1,3 +1,4 @@
+import { BreakPointConfig } from '../interfaces/config';
 import { BreakPointStyle, ScopeStyle } from '../interfaces/styles';
 import rules from '../rules';
 import { pipeClassNames } from '../shared/utils';
@@ -18,10 +19,10 @@ export function getPrefixStyle(classNames: Set<string>, pre: string): BreakPoint
 }
 
 
-export default function prefix(classNames: Set<string>) {
+export default function prefix(classNames: Set<string>, breakpointConfig?: BreakPointConfig, scopeConfig?: string[]) {
     return {
         status: status(classNames),
-        breakpoints: breakpoint(classNames),
-        scopes: scope(classNames)
+        breakpoints: breakpoint(classNames, breakpointConfig),
+        scopes: scope(classNames, scopeConfig)
     };
 }
