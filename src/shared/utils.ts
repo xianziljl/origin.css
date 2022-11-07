@@ -1,4 +1,4 @@
-import { sync as globSync } from 'glob';
+import glob from 'glob';
 import { readFileSync } from 'fs';
 import { NumStyle } from '../interfaces/styles';
 import { NUM_REG, NREG, UNIT_REG, UREG } from './const';
@@ -7,7 +7,7 @@ const REG = /[a-z]([a-z0-9-:%.]+)?/g;
 const ENCODING = 'utf-8';
 
 export function scanFiles(pattern: string): string[] {
-    return globSync(pattern, {});
+    return glob.sync(pattern, {});
 }
 
 export function scanFileClassNames(file: string): Set<string> {

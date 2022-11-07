@@ -1,10 +1,10 @@
 import { BreakPointConfig, Config } from './interfaces/config';
 import { BreakPointStyle, RegularStyle, ScopeStyle, StateStyle, StyleRaw } from './interfaces/styles';
-import { sync as globSync } from 'glob';
 import { readFileSync, writeFileSync } from 'fs';
 import { ENCODING, REG } from './shared/const';
 import { formatName } from './shared/utils';
 import { init } from './rules/regular/init';
+import glob from 'glob';
 import COLORS from './rules/colors/list';
 import prefix from './prefix';
 import rules from './rules';
@@ -40,7 +40,7 @@ export class Origincss {
     private scanAll() {
         const { pattern } = this;
         // console.log(pattern)
-        const files = globSync(pattern, {});
+        const files = glob.sync(pattern, {});
         files.forEach(file => this.scanFile(file));
         // writeFileSync('classnames.txt', Array.from(this.classNames).join('\n'), ENCODING)
     }

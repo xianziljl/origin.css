@@ -7,7 +7,6 @@ export function origincssVitePlugin() {
     const origincss = new Origincss();
     const plugin: Plugin = {
         name: "origincss-vite",
-        apply: 'serve',
         enforce: 'pre',
         resolveId(id: string) {
             if (id === virtualModuleId) {
