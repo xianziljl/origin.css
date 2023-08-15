@@ -2,7 +2,7 @@ export type BreakPointConfig = { [propName: string]: number; };
 
 export type ColorsConfig = { [propName: string]: string[]; }
 
-export interface Config {
+export interface OrigincssConfig {
   pattern?: string,
   classes?: string[],
   colors?: ColorsConfig,

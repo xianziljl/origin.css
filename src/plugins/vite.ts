@@ -1,7 +1,8 @@
 import { Origincss } from '../Origincss';
 import { Plugin } from 'vite';
+import { OrigincssConfig } from '../interfaces/config';
 
-export function origincssVitePlugin() {
+export function origincssVitePlugin(config?: OrigincssConfig) {
     const virtualModuleId = 'virtual:origin.css';
     const encodedVirtualModuleId = '/@id/' + virtualModuleId;
     const origincss = new Origincss();

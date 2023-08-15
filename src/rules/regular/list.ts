@@ -37,6 +37,10 @@ const REGULAR_LISR: [string, string][] = [
     ['je', 'justify-content: flex-end;'],
     ['jsb', 'justify-content: space-between;'],
 
+    ['f-w', 'flex-wrap: wrap;'],
+    ['f-nw', 'flex-wrap: nowrap;'],
+    ['f-wr', 'flex-wrap: wrap-reverse;'],
+
     // text align
     ['tc', 'text-align: center;'],
     ['tl', 'text-align: left;'],

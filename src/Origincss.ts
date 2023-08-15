@@ -1,4 +1,4 @@
-import { BreakPointConfig, Config } from './interfaces/config';
+import { BreakPointConfig, OrigincssConfig } from './interfaces/config';
 import { BreakPointStyle, RegularStyle, ScopeStyle, StateStyle, StyleRaw } from './interfaces/styles';
 import { readFileSync, writeFileSync } from 'fs';
 import { ENCODING, REG } from './shared/const';
@@ -21,7 +21,7 @@ export class Origincss {
     blackList: Set<string> = new Set();
     classNames: Set<string> = new Set();
 
-    constructor(config?: Config) {
+    constructor(config?: OrigincssConfig) {
         if (config) {
             const { pattern, classes, colors } = config;
             if (pattern) this.pattern = pattern;
