@@ -1,6 +1,6 @@
 {
   "name": "@doubibibibi/origin.css",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "一个类 tailwind.css 的 css class 合集，更小，类名规则更简短，支持响应式、黑色模式、任意数值",
   "main": "dist/index.js",
   "module": "dist/index.js",

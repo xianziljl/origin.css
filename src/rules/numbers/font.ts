@@ -11,7 +11,7 @@ const MAP = new Map<RegExp, string>([
 export default function font(classNames: Set<string>): NumStyle[] {
     let res = [];
     MAP.forEach((template, reg) => {
-        const style = getNumStyles(classNames, reg, template, PX);
+        const style = getNumStyles(classNames, reg, template, PX, true);
         res = res.concat(style);
     });
     return res;

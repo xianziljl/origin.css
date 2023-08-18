@@ -44,10 +44,11 @@ export function setNU(template: string, n: number, u: string) {
 }
 
 
-export function getNumStyles(classNames: Set<string>, reg: RegExp, template: string, defaultUnit = ''): NumStyle[] {
+export function getNumStyles(classNames: Set<string>, reg: RegExp, template: string, defaultUnit = '', float = false): NumStyle[] {
     const names = Array.from(pipeClassNames(classNames, reg));
     const result = names.map(name => {
-        const num = ~~NUM_REG.exec(name)[0];
+        const numStr = NUM_REG.exec(name)[0];
+        const num = float ? Number(numStr) : ~~numStr;
         const unit = UNIT_REG.exec(name)?.[0] ?? defaultUnit;
         const style = setNU(template, num, unit);
         return { name, num, unit, style };
