@@ -103,7 +103,7 @@ const REGULAR_LISR: [string, string][] = [
     ['pre', 'white-space: pre-wrap;'],
     ['tlf', 'table-layout: fixed;'],
     ['a', 'cursor: pointer;'],
-    ['i', 'font-style: itallic;'],
+    ['i', 'font-style: italic;'],
     ['b', 'font-weight: bold;'],
     ['s', 'text-decoration: line-through;'],
     ['u', 'text-decoration: underline;'],
